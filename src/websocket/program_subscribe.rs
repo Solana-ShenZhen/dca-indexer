@@ -5,7 +5,6 @@
 // use tokio_tungstenite::{connect_async, tungstenite::protocol::Message};
 // use url::Url;
 use solana_client::rpc_client::RpcClient;
-use solana_program::pubkey::Pubkey;
 use std::str::FromStr;
 use tokio::time::{sleep, Duration};
 
