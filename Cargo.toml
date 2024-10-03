@@ -1,0 +1,22 @@
+[package]
+name = "dca-indexer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anchor-lang = { version = "0.30.0", optional = true }
+borsh = "^0.10"
+num-derive = "^0.3"
+num-traits = "^0.2"
+solana-program = "~1.18"
+thiserror = "^1.0"
+serde = { version = "^1.0", features = ["derive"], optional = true }
+serde_with = { version = "^3.0", optional = true }
+kaigan = "0.2.5"
+tokio = { version = "^1.0", features = ["full"] }
+tokio-tungstenite = { version = "0.24.0", features = ["native-tls"] }
+tungstenite = "0.24.0"
+serde_json = "1.0.96"
+futures-util = "0.3.30"
+url = "2.3.0"
+solana-client = "1.18.2"
