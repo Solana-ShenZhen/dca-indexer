@@ -22,7 +22,7 @@ use dca_indexer::websocket::program_subscribe::program_subscribe;
 #[tokio::main]
 async fn main() {
     let url = "https://mainnet.helius-rpc.com/?api-key=f46e7c57-a4d4-43b0-b65b-1f287e2380cb";
-    let program_id = "PERPHjGBqRHArX4DySjwM6UJHiR3sWAatqfdBS2qQJu";
+    let program_id = "DCA265Vj8a9CEuX1eb1LWRnDT7uK6q1xMipnNyatn23M";
 
     loop {
         match program_subscribe(url, program_id).await {

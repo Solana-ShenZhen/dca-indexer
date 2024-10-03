@@ -107,14 +107,13 @@ use tokio::time::{sleep, Duration};
 //     }
 // }
 
-
 // rpc method
-pub fn get_signatures_for_address(rpc_url: &str, address: &str) -> Result<(), Box<dyn std::error::Error>> {
-
+pub async fn get_signatures_for_address(
+    rpc_url: &str,
+    address: &str,
+) -> Result<(), Box<dyn std::error::Error>> {
     let client = RpcClient::new(rpc_url.to_string());
-
     let pubkey = solana_program::pubkey::Pubkey::from_str(address)?;
-
     let signatures = client.get_signatures_for_address(&pubkey)?;
 
     for signature in signatures {
@@ -127,8 +126,11 @@ pub fn get_signatures_for_address(rpc_url: &str, address: &str) -> Result<(), Bo
 }
 
 // 添加新的公共函数
-pub async fn program_subscribe(url: &str, program_id: &str) -> Result<(), Box<dyn std::error::Error>> {
-    get_signatures_for_address(url, program_id)?;
+pub async fn program_subscribe(
+    url: &str,
+    program_id: &str,
+) -> Result<(), Box<dyn std::error::Error>> {
+    get_signatures_for_address(url, program_id).await?;
     sleep(Duration::from_secs(5)).await;
     Ok(())
 }
